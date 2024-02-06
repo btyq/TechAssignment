@@ -13,8 +13,13 @@ Design an automation deployed with GITHUB/GITLAB pipelines to create load balanc
 }
 
   2.Create subnets with size /24
+
   3.Generate SSH key for VM credential
+
   4.Take into consideration CSP Best Practices such as security and resiliency
+
   5.Take into consideration coding/scripting practices
+
   6.Leverage on native cloud metrics/logging for error handling
+
   7.Can use bash/terraform/python/powershell for the stack, github or github for the IAC pipeline
