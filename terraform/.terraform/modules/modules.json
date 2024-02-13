@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"ec2","Source":"./modules/ec2","Dir":"modules/ec2"},{"Key":"load_balancer","Source":"./modules/load_balancer","Dir":"modules/load_balancer"},{"Key":"networking","Source":"./modules/networking","Dir":"modules/networking"}]}
