@@ -26,7 +26,7 @@ resource "aws_internet_gateway" "my_igw" {
 #route table
 resource "aws_route_table" "my_route_table" {
   vpc_id = aws_vpc.main.id
-
+  
   route {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.my_igw.id
@@ -34,20 +34,38 @@ resource "aws_route_table" "my_route_table" {
 }
 
 resource "aws_route_table_association" "subnet_association" {
-  count = 200
+  count = 1
   subnet_id = aws_subnet.public[count.index].id
   route_table_id = aws_route_table.my_route_table.id
 }
 
+#security group
 resource "aws_security_group" "EC2_security_group" {
     name = "EC2_security_group"
     description = "EC2 Security Group"
+    vpc_id = aws_vpc.main.id
 
+    #(http port 80)
     ingress {
-        from_port = 80
-        to_port = 80
-        protocol = "tcp"
-        cidr_blocks = ["0.0.0.0/0"]
+      from_port = 80
+      to_port = 80
+      protocol = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+    #(https port 443)
+    ingress {
+      from_port   = 443
+      to_port     = 443
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+
+    #(ssh port 22)
+    ingress {
+      from_port = 22
+      to_port = 22
+      protocol = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
     }
 
     egress {

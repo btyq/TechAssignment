@@ -21,6 +21,10 @@ module "networking" {
 
 module "ec2" {
   source = "./modules/ec2"
+
+  vpc_id        = module.networking.vpc_id
+  subnet_ids    = module.networking.subnet_ids
+  security_group_id = module.networking.security_group_id
 }
 
 module "load_balancer" {
