@@ -10,7 +10,7 @@ variable "subnet_ids" {
 
 variable "security_group_id" {
     description = "Security group IDs for EC2 instances"
-    type        = list(string)
+    type        = string
 }
 
 variable "encryption-type" {

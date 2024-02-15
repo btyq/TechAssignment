@@ -12,5 +12,5 @@ output "subnet_ids" {
 
 output "security_group_id" {
     description = "ID of the security group created"
-    value = aws_security_group.EC2_security_group[*].id  
+    value = aws_security_group.EC2_security_group.id  
 }

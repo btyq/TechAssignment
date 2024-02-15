@@ -27,8 +27,4 @@ module "ec2" {
   security_group_id = module.networking.security_group_id
 }
 
-module "load_balancer" {
-  source = "./modules/load_balancer"
-}
-
 
