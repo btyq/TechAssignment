@@ -6,6 +6,16 @@ terraform {
       version = "5.35.0"
     }
   }
+
+  backend "remote" {
+        # The name of your Terraform Cloud organization.
+        organization = "TechnicalAssignment"
+
+        # The name of the Terraform Cloud workspace to store Terraform state files in.
+        workspaces {
+            name = "terraform-github-actions"
+        }
+  }
 }
 
 provider "aws" {
