@@ -17,7 +17,7 @@ jobs:
           terraform_version: 1.7.2
 
       - name: Navigate to Terraform directory
-        run: cd terraform
+        run: cd terraform/main.tf
 
       - name: Terraform Init
         run: terraform init
