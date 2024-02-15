@@ -2,7 +2,7 @@
 
 #obtaining cidr_info from supposedly an api call form python script
 data "external" "cidr_info" {
-  program = ["python", "${path.root}/scripts/cidr_info.py"]
+  program = ["python", "${path.module}/../scripts/cidr_info.py"]
 }
 
 #create vpc
