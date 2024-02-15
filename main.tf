@@ -1,5 +1,13 @@
+#main.tf
 terraform {
-    backend "remote" {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.35.0"
+    }
+  }
+  
+  backend "remote" {
         # The name of your Terraform Cloud organization.
         organization = "TechnicalAssignment"
 
@@ -7,12 +15,28 @@ terraform {
         workspaces {
             name = "terraform-github-actions"
         }
-    }
+  }
 }
 
-    # An example resource that does nothing.
-    resource "null_resource" "example" {
-        triggers = {
-            value = "A example resource that does nothing!"
-        }
+provider "aws" {
+  profile = var.profile
+  region = var.region
 }
+
+#--------All defined modules-------
+
+module "networking" {
+  source = "./modules/networking"
+}
+
+module "ec2" {
+  source = "./modules/ec2"
+
+  vpc_id        = module.networking.vpc_id
+  subnet_ids    = module.networking.subnet_ids
+  security_group_id = module.networking.security_group_id
+
+  depends_on = [ module.networking ]
+}
+
+
