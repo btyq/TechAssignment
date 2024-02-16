@@ -33,16 +33,17 @@ Using terraform cloud stores state file / compare state file that is in terrafor
 Upon merge to main branch, terraform.yml in /.github/workflows/terraform.yml will executte
 Using terrform cloud cloud which has the stored state file. This is compare the terraform infrastructure that exist in the cloud
 and perform terraform apply. 
-
+ec2-instance-i-0fac90461602ef99f distrubtes network to [ec2-instance-i-0d65f2b5eb6623707,ec2-instance-i-056cdd3558d594f30,ec2-instance-i-0d9303fbdc5a1791f,ec2-instance-i-0d9303fbdc5a1791f]
 Images below show load-balacing network traffic distributions between ec2 instances
-structure
-shown
-                                     |-----------ec2-instance-i-0d65f2b5eb6623707
-ec2-instance-i-0fac90461602ef99f --- |-----------ec2-instance-i-056cdd3558d594f30
-                                     |-----------ec2-instance-i-0d9303fbdc5a1791f
-                                     |-----------ec2-instance-i-0d9303fbdc5a1791f
-
 
 ![cloudwatch](https://github.com/btyq/TechAssignment/assets/115785548/a28a63c7-ff4d-4e18-80f7-81a1a939b1a4)
+
+Images below show that github actions terraform.yml is working 
+
+Pull request
+![pullrequest](https://github.com/btyq/TechAssignment/assets/115785548/b0c38f9c-c475-4fd8-a991-17a9f24b7d98)
+
+Merge request
+![merge](https://github.com/btyq/TechAssignment/assets/115785548/6d258bfe-f624-4227-b7e1-17f323ff6d70)
 
 
