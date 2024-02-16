@@ -23,4 +23,4 @@ Design an automation deployed with GITHUB/GITLAB pipelines to create load balanc
   6.Leverage on native cloud metrics/logging for error handling
 
   7.Can use bash/terraform/python/powershell for the stack, github or github for the IAC pipeline
-       
+                 
