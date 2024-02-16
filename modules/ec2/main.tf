@@ -50,13 +50,13 @@ resource "null_resource" "configure_load_balancer" {
 
   provisioner "file" {
     source      = "${path.module}/nginx/nginx_config.conf" 
-    destination = "/tmp/nginx_config.conf"  # Upload to a user-writable directory
+    destination = "/tmp/nginx_config.conf"
   }
 
   provisioner "remote-exec" {
     inline = [
-      "sudo cp /tmp/nginx_config.conf /etc/nginx/conf.d/",  # Copy to the final location
-      "sudo nginx -s reload",  # Reload Nginx to apply the changes",  # Reload Nginx to apply the changes
+      "sudo cp /tmp/nginx_config.conf /etc/nginx/conf.d/",
+      "sudo nginx -s reload",
     ]
   }
 
