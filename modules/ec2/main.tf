@@ -49,7 +49,7 @@ resource "null_resource" "configure_load_balancer" {
   }
 
   provisioner "file" {
-    source      = "${path.module}/nginx/nginx_config.conf" 
+    content = data.template_file.nginx_config 
     destination = "/tmp/nginx_config.conf"  # Upload to a user-writable directory
   }
 
