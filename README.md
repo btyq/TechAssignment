@@ -24,7 +24,25 @@ Design an automation deployed with GITHUB/GITLAB pipelines to create load balanc
 
   7.Can use bash/terraform/python/powershell for the stack, github or github for the IAC pipeline
 
+=====================================================================================================================================================================================================================================================================
 
-CLOUDWATCH METRICS 
+Upon pull request, terraform.yml in /.github/workflows/terraform.yml will execute
+Using terraform cloud stores state file / compare state file that is in terraform cloud.
+(PULL REQUEST WILL ONLY EXECUTE TILL terraform plan)
 
-![Alt text](https://imgur.com/a/3vlaWw8)
+Upon merge to main branch, terraform.yml in /.github/workflows/terraform.yml will executte
+Using terrform cloud cloud which has the stored state file. This is compare the terraform infrastructure that exist in the cloud
+and perform terraform apply. 
+
+Images below show load-balacing network traffic distributions between ec2 instances
+structure
+shown
+                                     |-----------ec2-instance-i-0d65f2b5eb6623707
+ec2-instance-i-0fac90461602ef99f --- |-----------ec2-instance-i-056cdd3558d594f30
+                                     |-----------ec2-instance-i-0d9303fbdc5a1791f
+                                     |-----------ec2-instance-i-0d9303fbdc5a1791f
+
+
+![cloudwatch](https://github.com/btyq/TechAssignment/assets/115785548/a28a63c7-ff4d-4e18-80f7-81a1a939b1a4)
+
+
