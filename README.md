@@ -27,4 +27,4 @@ Design an automation deployed with GITHUB/GITLAB pipelines to create load balanc
 
 CLOUDWATCH METRICS 
 
-![alt text]([http://url/to/img.png](https://imgur.com/a/3vlaWw8))
+![Alt text](https://imgur.com/a/3vlaWw8)
